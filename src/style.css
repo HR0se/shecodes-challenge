@@ -55,6 +55,7 @@ div.current-weather {
   border-radius: 10px;
   padding: 20px;
   margin: 0 auto;
+  height: 200px;
 }
 
 div.current-weather-icon {
@@ -77,6 +78,7 @@ div.five-day-forecast {
   border-radius: 10px;
   padding: 10px;
   padding-bottom: 0;
+  height: 200px;
 }
 
 div.forecast-card {
