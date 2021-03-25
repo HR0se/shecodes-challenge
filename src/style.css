@@ -16,6 +16,7 @@ h1 {
 h2,
 h2.current-temperature {
   font-size: 27px;
+  line-height: 1;
 }
 
 h2.current-temperature {
@@ -95,8 +96,17 @@ div.card-body {
   padding: 5px;
 }
 
-.weather-icon {
-  font-size: 30px;
+.current-temperature small {
+  font-size: 16px;
+  position: relative;
+  top: -7px;
+}
+
+.current-weather-icon img {
+  width: 80px;
+  border: 1px solid #109648;
+  background: #fff;
+  border-radius: 4px;
 }
 
 .search-bar-item {
