@@ -75,6 +75,8 @@ function displayTemperature(response) {
 
   let currentCountryCode = response.data.sys.country;
 
+  let currentWeatherIconCode = response.data.weather[0].icon;
+
   let isoCountryCodes = {
     GB: "UK",
     JP: "Japan",
@@ -82,23 +84,28 @@ function displayTemperature(response) {
 
   let currentCountry = isoCountryCodes[currentCountryCode];
 
-  console.log(currentCity);
-
   let tempDisplay = document.querySelector("#current-temperature");
 
   let heading = document.querySelector("h1");
 
+  let weatherIcon = document.querySelector("#current-weather-icon");
+
   heading.innerHTML = `${currentCity}, ${currentCountry}`;
 
   tempDisplay.innerHTML = `${currentTemperature}°C`;
-}
 
-displayCurrentTime();
+  weatherIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${currentWeatherIconCode}@2x.png`
+  );
+}
 
 let citySearchForm = document.querySelector("#search-engine");
 
-citySearchForm.addEventListener("submit", searchWeatherCityName);
-
 let currentLocationButton = document.querySelector("#location-search-button");
+
+displayCurrentTime();
+
+citySearchForm.addEventListener("submit", searchWeatherCityName);
 
 currentLocationButton.addEventListener("click", searchWeatherCoords);
