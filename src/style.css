@@ -3,6 +3,11 @@ body {
   color: #251605;
 }
 
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
 h4,
 h5 {
   text-align: center;
@@ -10,17 +15,14 @@ h5 {
 
 h1 {
   font-size: 30px;
-  text-align: right;
+  display: inline;
 }
 
 h2,
 h2.current-temperature {
   font-size: 27px;
   line-height: 1;
-}
-
-h2.current-temperature {
-  text-align: right;
+  margin: 0;
 }
 
 h3 {
@@ -102,11 +104,12 @@ div.card-body {
   top: -7px;
 }
 
-.current-weather-icon img {
+.current-location-icon img {
   width: 80px;
   border: 1px solid #109648;
   background: #fff;
   border-radius: 4px;
+  float: right;
 }
 
 .search-bar-item {

@@ -27,29 +27,25 @@
   <body>
     <div class="container">
       <div class="current-weather">
-        <div class="row">
-          <div class="col-6">
-            <h1 id="current-location">Please enter your city below</h1>
-          </div>
-          <div class="col-6">
+        <ul>
+          <li>
             <h2 id="current-date-time">date, time</h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-6">
-            <h2 id="current-temperature" class="current-temperature"></h2>
-          </div>
-          <div class="col-6">
-            <div class="current-weather-icon">
+          </li>
+          <li>
+            <div class="current-location-icon">
+              <h1 id="current-location">Please enter your city below</h1>
               <img src="#" alt="" id="current-weather-icon" />
             </div>
-          </div>
-        </div>
+          </li>
+          <li>
+            <h2 id="current-temperature" class="current-temperature"></h2>
+          </li>
+        </ul>
       </div>
       <div class="search">
         <form id="search-engine">
           <div class="row">
-            <div class="col-12 col-md-6">
+            <div class="col-md-6">
               <input
                 type="text"
                 placeholder="Please enter your city"
@@ -59,11 +55,11 @@
                 autofocus="on"
               />
             </div>
-            <div class="col-12 col-md-3">
+            <div class="col-md-3">
               <input type="submit" value="Search" class="search-button search-bar-item" />
             </div>
           </form>
-          <div class="col-12 col-md-3">
+          <div class="col-md-3">
             <button class="search-button search-bar-item" id="location-search-button">Current Location</button>
           </div>
         </div>
@@ -76,7 +72,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-12 col-md">
+          <div class="col-md">
             <div class="card forecast-card">
               <div class="card-body">
                 <h4 class="card-title">8°C</h4>
@@ -91,7 +87,7 @@
               </div>
             </div>
           </div>
-          <div class="col-12 col-md">
+          <div class="col-md">
             <div class="card forecast-card">
               <div class="card-body">
                 <h4 class="card-title">6°C</h4>
@@ -103,7 +99,7 @@
               </div>
             </div>
           </div>
-          <div class="col-12 col-md">
+          <div class="col-md">
             <div class="card forecast-card">
               <div class="card-body">
                 <h4 class="card-title">10°C</h4>
@@ -118,7 +114,7 @@
               </div>
             </div>
           </div>
-          <div class="col-12 col-md">
+          <div class="col-md">
             <div class="card forecast-card">
               <div class="card-body">
                 <h4 class="card-title">11°C</h4>
@@ -133,7 +129,7 @@
               </div>
             </div>
           </div>
-          <div class="col-12 col-md">
+          <div class="col-md">
             <div class="card forecast-card">
               <div class="card-body">
                 <h4 class="card-title">9°C</h4>
