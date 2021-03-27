@@ -27,9 +27,17 @@ function displayCurrentTime() {
 
   let currentDay = days[currentDate.getDay()];
 
+  let currentDateInMonth = currentDate.getDate();
+
+  let currentMonth = currentDate.getMonth();
+
+  let currentYear = currentDate.getFullYear();
+
   let dateTime = document.querySelector("#current-date-time");
 
-  dateTime.innerHTML = `${currentDay}, ${currentHour}:${currentMinute}`;
+  dateTime.innerHTML = `${currentDay}, ${currentDateInMonth}/${
+    currentMonth + 1
+  }/${currentYear}, ${currentHour}:${currentMinute}`;
 }
 
 function searchWeatherCityName(event) {
