@@ -108,7 +108,7 @@ function displayTemperature(response) {
 
   currentLocationElement.innerHTML = `${currentCity}, ${currentCountry}`;
 
-  tempDisplay.innerHTML = `${currentTemperature}<small>°C</small>`;
+  tempDisplay.innerHTML = `<span>${currentTemperature}</span><small>°C</small>`;
 
   weatherIcon.setAttribute(
     "src",
