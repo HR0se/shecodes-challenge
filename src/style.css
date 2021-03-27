@@ -112,6 +112,10 @@ div.card-body {
   float: right;
 }
 
+.current-description {
+  text-transform: capitalize;
+}
+
 .search-bar-item {
   background: #a4d4b4;
   border-radius: 4px;

@@ -90,17 +90,19 @@ function displayTemperature(response) {
 
   let currentCountry = isoCountryCodes[currentCountryCode];
 
-  let tempDisplay = document.querySelector("#current-temperature");
-
-  let heading = document.querySelector("h1");
-
-  let weatherIcon = document.querySelector("#current-weather-icon");
-
   let currentWeatherIconCode = response.data.weather[0].icon;
 
   let currentWeatherDescription = response.data.weather[0].description;
 
-  heading.innerHTML = `${currentCity}, ${currentCountry}`;
+  let currentLocationElement = document.querySelector("#current-location");
+
+  let tempDisplay = document.querySelector("#current-temperature");
+
+  let weatherIcon = document.querySelector("#current-weather-icon");
+
+  let weatherDescription = document.querySelector("#current-description");
+
+  currentLocationElement.innerHTML = `${currentCity}, ${currentCountry}`;
 
   tempDisplay.innerHTML = `${currentTemperature}<small>°C</small>`;
 
@@ -111,7 +113,7 @@ function displayTemperature(response) {
 
   weatherIcon.setAttribute("alt", `${currentWeatherDescription}`);
 
-  console.log(weatherIcon);
+  weatherDescription.innerHTML = `${currentWeatherDescription}`;
 }
 
 let citySearchForm = document.querySelector("#search-engine");
