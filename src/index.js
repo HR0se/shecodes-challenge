@@ -40,13 +40,17 @@ function displayCurrentTime() {
   }/${currentYear}, ${currentHour}:${currentMinute}`;
 }
 
-function searchWeatherCityName(event) {
+function handleSubmit(event) {
   event.preventDefault();
 
   let cityInputText = document.querySelector("#search-bar");
 
   let cityName = `${cityInputText.value}`;
 
+  searchWeatherCityName(cityName);
+}
+
+function searchWeatherCityName(cityName) {
   let apiKey = "45526f214a1657311e19c90163a6ab34";
 
   let units = "metric";
@@ -122,6 +126,8 @@ let currentLocationButton = document.querySelector("#location-search-button");
 
 displayCurrentTime();
 
-citySearchForm.addEventListener("submit", searchWeatherCityName);
+searchWeatherCityName("London");
+
+citySearchForm.addEventListener("submit", handleSubmit);
 
 currentLocationButton.addEventListener("click", searchWeatherCoords);
