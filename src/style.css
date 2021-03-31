@@ -100,6 +100,22 @@ div.card-body {
   top: -12px;
 }
 
+.current-temperature a {
+  color: #251605;
+  text-decoration: none;
+  font-weight: 700;
+  cursor: default;
+}
+
+.current-weather .active {
+  font-weight: normal;
+}
+
+.current-weather .active:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .current-location-icon img {
   width: 100px;
   border: 1px solid #109648;
