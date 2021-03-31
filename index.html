@@ -35,7 +35,19 @@
               <span id="current-location"></span>
               <img src="#" alt="" id="current-weather-icon" />
           </li>
-          <li class="current-temperature"><span id ="current-temperature-value"></span><small><a href="#" id = "celsius-link">°C</a>|<a href="#" id = "fahrenheit-link" class="active">°F</a></small>
+          <li class="current-temperature">
+            <div class="row">
+              <div class="col-md-6 col-lg-3">
+                <span id ="current-temperature-value"></span>
+                <small><a href="#" id = "celsius-link">°C</a>|<a href="#" id = "fahrenheit-link" class="active">°F</a></small>
+              </div>
+              <div class="col-md-6 col-lg-3 wind-speed-humidity">
+                <ul>
+                  <li>Wind Speed: 10mph</li>
+                  <li>Humidity: 50%</li>
+                </ul>
+              </div>
+            </div>
           </li>
           <li id="current-description" class="current-description">
           </li>
