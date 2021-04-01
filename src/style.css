@@ -87,11 +87,12 @@ div.card-body {
 }
 
 .current-temperature span {
-  font-size: 40px;
+  font-size: 36px;
+  line-height: 1;
 }
 
 .current-temperature small {
-  font-size: 20px;
+  font-size: 16px;
   position: relative;
   top: -12px;
 }
@@ -112,15 +113,23 @@ div.card-body {
   cursor: pointer;
 }
 
-div.wind-speed-humidity {
+div.temperature-section {
   padding: 0;
-  padding-top: 8px;
+  padding-right: 10px;
+}
+
+div.wind-speed-humidity {
   margin: 0;
-  color: red;
+  padding: 0;
 }
 
 .wind-speed-humidity ul {
   font-size: 14px;
+}
+
+.wind-speed-humidity li {
+  display: inline-block;
+  width: 170px;
 }
 
 .current-location-icon img {

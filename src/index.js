@@ -57,6 +57,8 @@ function searchWeatherCityName(cityName) {
 
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=${units}`;
 
+  console.log(apiUrl);
+
   axios.get(apiUrl).then(displayTemperature);
 }
 
@@ -100,6 +102,10 @@ function displayTemperature(response) {
 
   let currentWeatherDescription = response.data.weather[0].description;
 
+  let currentWindSpeed = Math.round(response.data.wind.speed);
+
+  let currentHumidity = response.data.main.humidity;
+
   let currentLocationElement = document.querySelector("#current-location");
 
   let tempDisplay = document.querySelector("#current-temperature-value");
@@ -107,6 +113,10 @@ function displayTemperature(response) {
   let weatherIcon = document.querySelector("#current-weather-icon");
 
   let weatherDescription = document.querySelector("#current-description");
+
+  let windSpeedDisplay = document.querySelector("#wind-speed");
+
+  let humidityDisplay = document.querySelector("#humidity");
 
   currentLocationElement.innerHTML = `${currentCity}, ${currentCountry}`;
 
@@ -120,6 +130,10 @@ function displayTemperature(response) {
   weatherIcon.setAttribute("alt", `${currentWeatherDescription}`);
 
   weatherDescription.innerHTML = `${currentWeatherDescription}`;
+
+  windSpeedDisplay.innerHTML = `${currentWindSpeed}`;
+
+  humidityDisplay.innerHTML = `${currentHumidity}`;
 }
 
 function displayFahrenheitTemperature(event) {
