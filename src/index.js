@@ -162,6 +162,38 @@ function displayCelsiusTemperature(event) {
   currentTemperature.innerHTML = Math.round(celsiusTemperature);
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = [`Mon`, `Tues`, `Wed`, `Thurs`, `Fri`];
+
+  let forecastHTML = `<div class="row">`;
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+    <div class="col-md">
+      <div class="card forecast-card">
+        <div class="card-body">
+          <h2 class="card-title">8°C</h2>
+          <p class="card-text">
+            <i class="fas fa-cloud weather-icon" id="mon-weather-icon"></i>
+          </p>
+          <h2>${day}</h2>
+        </div>
+      </div>
+    </div>
+    `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+
+  forecastElement.innerHTML = forecastHTML;
+
+  console.log(forecastHTML);
+}
+
 let citySearchForm = document.querySelector("#search-engine");
 
 let currentLocationButton = document.querySelector("#location-search-button");
@@ -183,3 +215,5 @@ currentLocationButton.addEventListener("click", searchWeatherCoords);
 displayCurrentTime();
 
 searchWeatherCityName("London");
+
+displayForecast();
