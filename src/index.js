@@ -201,9 +201,9 @@ function displayForecast(response) {
         <div class="card-body">
           <h3 class="card-title"><span class="forecast-max-temp">${Math.round(
             dailyForecast.temp.max
-          )}°</span>|<span class="forecast-min-temp">${Math.round(
+          )}<small>°C</small></span>|<span class="forecast-min-temp">${Math.round(
           dailyForecast.temp.min
-        )}°</span></h2>
+        )}<small>°C</small></span></h2>
           <img src="http://openweathermap.org/img/wn/${
             dailyForecast.weather[0].icon
           }@2x.png" alt="${dailyForecast.weather.description}" />
