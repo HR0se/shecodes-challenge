@@ -57,8 +57,6 @@ function searchWeatherCityName(cityName) {
 
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=${units}`;
 
-  console.log(apiUrl);
-
   axios.get(apiUrl).then(displayTemperature);
 }
 
@@ -134,6 +132,18 @@ function displayTemperature(response) {
   windSpeedDisplay.innerHTML = `${currentWindSpeed}`;
 
   humidityDisplay.innerHTML = `${currentHumidity}`;
+
+  getForecast(response.data.coord);
+}
+
+function getForecast(coords) {
+  let apiKey = "45526f214a1657311e19c90163a6ab34";
+
+  let units = "metric";
+
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coords.lat}&lon=${coords.lon}&exclude=minutely,hourly,alerts&appid=${apiKey}&units=${units}`;
+
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function displayFahrenheitTemperature(event) {
@@ -162,29 +172,48 @@ function displayCelsiusTemperature(event) {
   currentTemperature.innerHTML = Math.round(celsiusTemperature);
 }
 
-function displayForecast() {
-  let forecastElement = document.querySelector("#forecast");
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
 
-  let days = [`Mon`, `Tues`, `Wed`, `Thurs`, `Fri`];
+  let day = date.getDay();
+
+  let days = ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"];
+
+  return days[day];
+}
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
+
+  console.log(forecast);
+
+  let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
 
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
-    <div class="col-md">
+  forecast.forEach(function (dailyForecast, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
+    <div class="col-lg">
       <div class="card forecast-card">
         <div class="card-body">
-          <h2 class="card-title">8°C</h2>
-          <p class="card-text">
-            <i class="fas fa-cloud weather-icon" id="mon-weather-icon"></i>
-          </p>
-          <h2>${day}</h2>
+          <h3 class="card-title"><span class="forecast-max-temp">${Math.round(
+            dailyForecast.temp.max
+          )}°</span>|<span class="forecast-min-temp">${Math.round(
+          dailyForecast.temp.min
+        )}°</span></h2>
+          <img src="http://openweathermap.org/img/wn/${
+            dailyForecast.weather[0].icon
+          }@2x.png" alt="${dailyForecast.weather.description}" />
+          <h2>${formatDay(dailyForecast.dt)}</h2>
+
         </div>
       </div>
     </div>
     `;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;

@@ -22,14 +22,18 @@ h3 {
 h1 {
   font-size: 20px;
   text-align: right;
+  font-weight: 700;
 }
 
 h2 {
   font-size: 16px;
+  font-weight: 700;
+  margin: 0;
 }
 
 h3 {
-  font-size: 14px;
+  font-size: 16px;
+  margin: 0;
 }
 
 div.container {
@@ -162,26 +166,19 @@ div.wind-speed-humidity {
   background: #82c498;
 }
 
+.forecast-card img {
+  display: block;
+  margin: 10px auto;
+  width: 80px;
+  border: 1px solid #109648;
+  background: #fff;
+  border-radius: 4px;
+}
+
+span.forecast-min-temp {
+  opacity: 0.6;
+}
+
 #forecast-title {
   text-align: center;
-}
-
-#mon-weather-icon {
-  color: #86a5d9;
-}
-
-#tues-weather-icon {
-  color: #ffbe0b;
-}
-
-#wed-weather-icon {
-  color: #a4d4b4;
-}
-
-#thurs-weather-icon {
-  color: #251605;
-}
-
-#fri-weather-icon {
-  color: #ffbe0b;
 }
